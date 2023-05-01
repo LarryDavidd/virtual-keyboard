@@ -11,7 +11,7 @@ p {
 }
 
 textarea {
-  width: 100rem;
+  width: 50rem;
   height: 30rem;
   margin: 5rem;
   position: absolute;
@@ -70,4 +70,12 @@ button {
 
 .keyboard__ctrl {
   width: 8%;
+}
+
+.hidden {
+  display: none;
+}
+
+.inf {
+  font-size: 2rem;
 }
