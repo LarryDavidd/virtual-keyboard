@@ -2,8 +2,8 @@ let en = [
   '`~', '1!', '2@', '3#', '4$', '5%', '6^', '7&', '8*', '9(', '0)', '-_', '+=', 'backspace', 'br',
   'tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[{', ']}', '\|', 'del', 'br',
   'caps', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';:', '"', 'enter', 'br',
-  'shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',<', '.>', '/?', 'up^', 'shift', 'br',
-  'ctrl', 'win', 'alt', 'space', 'alt', 'ctrl', 'left', 'down', 'right'
+  'shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',<', '.>', '/?', 'Up^', 'shift', 'br',
+  'ctrl', 'win', 'alt', 'space', 'alt', 'ctrl', 'Left', 'Down', 'Right'
 ]
 
 
@@ -58,7 +58,7 @@ const createKeyboard = () => {
   keyboard.appendChild(keyboard__buttons);
   
   let textarea = createTextarea();
-  console.log(textarea)
+  console.log(textarea);
 
   const body = document.querySelector('body');
   body.appendChild(textarea);
@@ -69,18 +69,23 @@ const createKeyboard = () => {
 
 const clickButton = (e) => {
   let textarea = document.querySelector('textarea');
-  if (e.target.classList == 'BUTTON') {
+  if (e.target.classList == 'keyboard__button') {
     console.log(e.target.id);
     textarea.value += e.target.id[0];
     chars = textarea.value.split('');
-  } else {
-    console.log(e.target.id)
-    textarea.value += e.target.closest('BUTTON').id[0];
-    chars = textarea.value.split('');
   }
+  // } else {
+  //   console.log(e.target.id)
+  //   textarea.value += e.target.closest('BUTTON').id[0];
+  //   chars = textarea.value.split('');
+  // }
 }
 
-let chars = []
+window.addEventListener('keydown', (e) => {
+  console.log(e);
+});
+
+let chars = [];
 
 createKeyboard();
 
